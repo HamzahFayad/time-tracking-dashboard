@@ -1,0 +1,26 @@
+@import "./reset.scss";
+@import "./base.scss";
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap");
+
+.grid {
+  display: grid;
+  place-items: center;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 0px 16px;
+  grid-template-areas:
+    "lg sh1 sh2 sh3"
+    "lg sh4 sh5 sh6";
+  justify-content: center;
+  .card--lg {
+    grid-area: lg;
+  }
+  @for $i from 1 through 6 {
+    .card--sm:nth-child(#{$i}) {
+      grid-area: sh + $i;
+    }
+  }
+  p {
+    color: #fff;
+  }
+}

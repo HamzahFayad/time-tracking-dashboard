@@ -1,0 +1,98 @@
+/*reset*/
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap");
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+html,
+body {
+  height: 100vh;
+  margin: 0 auto;
+  overflow-x: hidden;
+  font-family: "Rubik";
+  font-size: 16px;
+  background: #0f1424;
+  -webkit-font-smoothing: antialiased;
+  display: grid;
+  place-items: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+/*reset*/
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+html,
+body {
+  height: 100vh;
+  margin: 0 auto;
+  overflow-x: hidden;
+  font-family: "Rubik";
+  font-size: 16px;
+  background: #0f1424;
+  -webkit-font-smoothing: antialiased;
+  display: grid;
+  place-items: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+.grid {
+  display: grid;
+  place-items: center;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 0px 16px;
+  grid-template-areas: "lg sh1 sh2 sh3" "lg sh4 sh5 sh6";
+  justify-content: center;
+}
+.grid .card--lg {
+  grid-area: lg;
+}
+.grid .card--sm:nth-child(1) {
+  grid-area: sh1;
+}
+.grid .card--sm:nth-child(2) {
+  grid-area: sh2;
+}
+.grid .card--sm:nth-child(3) {
+  grid-area: sh3;
+}
+.grid .card--sm:nth-child(4) {
+  grid-area: sh4;
+}
+.grid .card--sm:nth-child(5) {
+  grid-area: sh5;
+}
+.grid .card--sm:nth-child(6) {
+  grid-area: sh6;
+}
+.grid p {
+  color: #fff;
+}
+
+/*# sourceMappingURL=styles.css.map */

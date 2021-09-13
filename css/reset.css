@@ -1,0 +1,32 @@
+/*reset*/
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+html,
+body {
+  height: 100vh;
+  margin: 0 auto;
+  overflow-x: hidden;
+  font-family: "Rubik";
+  font-size: 16px;
+  background: #0f1424;
+  -webkit-font-smoothing: antialiased;
+  display: grid;
+  place-items: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+/*# sourceMappingURL=reset.css.map */
