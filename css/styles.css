@@ -73,6 +73,52 @@ a {
 .grid .card--lg {
   grid-area: lg;
 }
+.grid .card--lg .user {
+  position: relative;
+  height: 400px;
+  width: 250px;
+}
+.grid .card--lg .user__pt1 {
+  background: #5847eb;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border-top-left-radius: 14px;
+  border-top-right-radius: 14px;
+  height: 300px;
+  padding: 24px 34px;
+  display: flex;
+  flex-flow: column wrap;
+}
+.grid .card--lg .user__pt1 h1,
+.grid .card--lg .user__pt1 p {
+  margin-top: 10%;
+  padding: 0 6px;
+}
+.grid .card--lg .user__pt1 h1 {
+  color: #fff;
+  font-weight: 400;
+  margin: 0;
+}
+.grid .card--lg .user__pt1 p {
+  font-weight: 300;
+}
+.grid .card--lg .user__pt2 {
+  background: #1c1f4a;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 14px;
+  border-bottom-right-radius: 14px;
+  height: 125px;
+  padding: 8px;
+}
+.grid .card--lg .user__pt2 p {
+  color: #6f76c8;
+  padding: 8px 34px;
+  cursor: pointer;
+}
+.grid .card--lg .user__pt2 p.active {
+  color: #fff;
+}
 .grid .card--sm:nth-child(1) {
   grid-area: sh1;
 }

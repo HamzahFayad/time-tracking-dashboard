@@ -14,6 +14,52 @@
   justify-content: center;
   .card--lg {
     grid-area: lg;
+    .user {
+      position: relative;
+      height: 400px;
+      width: 250px;
+      &__pt1 {
+        background: hsl(246, 80%, 60%);
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        border-top-left-radius: 14px;
+        border-top-right-radius: 14px;
+        height: 300px;
+        padding: 24px 34px;
+        display: flex;
+        flex-flow: column wrap;
+        h1,
+        p {
+          margin-top: 10%;
+          padding: 0 6px;
+        }
+        h1 {
+          color: #fff;
+          font-weight: 400;
+          margin: 0;
+        }
+        p {
+          font-weight: 300;
+        }
+      }
+      &__pt2 {
+        background: hsl(235, 46%, 20%);
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        border-bottom-left-radius: 14px;
+        border-bottom-right-radius: 14px;
+        height: 125px;
+        padding: 8px;
+        p {
+          color: hsl(235, 45%, 61%);
+          padding: 8px 34px;
+          cursor: pointer;
+        }
+        p.active {
+          color: #fff;
+        }
+      }
+    }
   }
   @for $i from 1 through 6 {
     .card--sm:nth-child(#{$i}) {
