@@ -62,8 +62,53 @@
     }
   }
   @for $i from 1 through 6 {
-    .card--sm:nth-child(#{$i}) {
-      grid-area: sh + $i;
+    .card--sm:nth-of-type(#{$i}) {
+      grid-area: "sh" + $i;
+    }
+  }
+  .card--sm {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    border-radius: 14px;
+    background: hsl(235, 46%, 20%);
+    padding: 0px;
+    margin: 4px;
+    margin-top: 25px;
+    &--col {
+      width: 300px;
+      height: 45px;
+      border-radius: 14px;
+      z-index: -99;
+      overflow: hidden;
+      img {
+        width: 70px;
+        float: right;
+        margin-right: 10px;
+      }
+    }
+    @each $color in $theme-colors {
+      $i: index($theme-colors, $color);
+      .col--#{$i} {
+        background: $color;
+      }
+    }
+
+    &--content {
+      z-index: 9;
+      padding: 24px 34px;
+      * {
+        margin: 4% 0;
+      }
+      h2 {
+        color: #fff;
+        font-weight: 400;
+      }
+      h3 {
+        color: #fff;
+        font-weight: 300;
+        font-size: 40px;
+      }
     }
   }
   p {

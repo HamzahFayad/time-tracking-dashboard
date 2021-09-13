@@ -106,7 +106,39 @@
     },
   ];
 
+  let links = document.querySelectorAll(".link");
+  let theme = document.querySelectorAll(".theme");
+  let hours1 = document.querySelectorAll(".hours1");
+
+  let time = document.querySelectorAll(".time");
+
   for (let i = 0; i < data.length; i++) {
-    console.log(data[i]);
+    console.log(data[i].title);
+    console.log("..", theme[i]);
+    theme[i].innerHTML = data[i].title;
+    hours1[i].innerHTML = data[i].timeframes.daily.current;
+  }
+
+  for (let l = 0; l < links.length; l++) {
+    links[l].addEventListener("click", (e) => {
+      let active = document.querySelector(".active");
+      if (active) active.classList.remove("active");
+      e.target.classList.add("active");
+
+      for (let i = 0; i < data.length; i++) {
+        if (links[l].innerHTML === "Daily") {
+          time[i].innerHTML = "Yesterday";
+          hours1[i].innerHTML = data[i].timeframes.daily.current;
+        }
+        if (links[l].innerHTML === "Weekly") {
+          time[i].innerHTML = "Last Week";
+          hours1[i].innerHTML = data[i].timeframes.weekly.current;
+        }
+        if (links[l].innerHTML === "Monthly") {
+          time[i].innerHTML = "Last Month";
+          hours1[i].innerHTML = data[i].timeframes.monthly.current;
+        }
+      }
+    });
   }
 }

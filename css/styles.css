@@ -119,23 +119,79 @@ a {
 .grid .card--lg .user__pt2 p.active {
   color: #fff;
 }
-.grid .card--sm:nth-child(1) {
-  grid-area: sh1;
+.grid .card--sm:nth-of-type(1) {
+  grid-area: "sh1";
 }
-.grid .card--sm:nth-child(2) {
-  grid-area: sh2;
+.grid .card--sm:nth-of-type(2) {
+  grid-area: "sh2";
 }
-.grid .card--sm:nth-child(3) {
-  grid-area: sh3;
+.grid .card--sm:nth-of-type(3) {
+  grid-area: "sh3";
 }
-.grid .card--sm:nth-child(4) {
-  grid-area: sh4;
+.grid .card--sm:nth-of-type(4) {
+  grid-area: "sh4";
 }
-.grid .card--sm:nth-child(5) {
-  grid-area: sh5;
+.grid .card--sm:nth-of-type(5) {
+  grid-area: "sh5";
 }
-.grid .card--sm:nth-child(6) {
-  grid-area: sh6;
+.grid .card--sm:nth-of-type(6) {
+  grid-area: "sh6";
+}
+.grid .card--sm {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  border-radius: 14px;
+  background: #1c1f4a;
+  padding: 0px;
+  margin: 4px;
+  margin-top: 25px;
+}
+.grid .card--sm--col {
+  width: 300px;
+  height: 45px;
+  border-radius: 14px;
+  z-index: -99;
+  overflow: hidden;
+}
+.grid .card--sm--col img {
+  width: 70px;
+  float: right;
+  margin-right: 10px;
+}
+.grid .card--sm .col--1 {
+  background: #ff8c66;
+}
+.grid .card--sm .col--2 {
+  background: #56c2e6;
+}
+.grid .card--sm .col--3 {
+  background: #ff5c7c;
+}
+.grid .card--sm .col--4 {
+  background: #4acf81;
+}
+.grid .card--sm .col--5 {
+  background: #7536d3;
+}
+.grid .card--sm .col--6 {
+  background: #f1c65b;
+}
+.grid .card--sm--content {
+  z-index: 9;
+  padding: 24px 34px;
+}
+.grid .card--sm--content * {
+  margin: 4% 0;
+}
+.grid .card--sm--content h2 {
+  color: #fff;
+  font-weight: 400;
+}
+.grid .card--sm--content h3 {
+  color: #fff;
+  font-weight: 300;
+  font-size: 40px;
 }
 .grid p {
   color: #fff;
