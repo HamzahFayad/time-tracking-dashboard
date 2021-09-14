@@ -61,6 +61,24 @@ a {
   text-decoration: none;
 }
 
+@keyframes fromLeft {
+  0% {
+    transform: translate(-1000px, 0px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+@keyframes fromRight {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
 .grid {
   display: grid;
   place-items: center;
@@ -71,7 +89,9 @@ a {
   justify-content: center;
 }
 .grid .card--lg {
+  transform: translate(-1000px, 0px);
   grid-area: lg;
+  animation: fromLeft 800ms forwards;
 }
 .grid .card--lg .user {
   position: relative;
@@ -148,6 +168,8 @@ a {
   background: #1c1f4a;
   margin-top: 25px;
   cursor: pointer;
+  transform: translate(1000px, 0px);
+  animation: fromRight 800ms forwards 150ms;
 }
 .grid .card--sm:hover {
   background: #26295a;
