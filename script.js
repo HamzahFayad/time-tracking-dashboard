@@ -111,12 +111,16 @@
   let hours1 = document.querySelectorAll(".hours1");
   let time = document.querySelectorAll(".time");
 
+  //init data (Daily)
   for (let i = 0; i < data.length; i++) {
     console.log(data[i].title);
     theme[i].innerHTML = data[i].title;
-    hours1[i].innerHTML = data[i].timeframes.daily.current;
+    hours1[i].innerHTML = data[i].timeframes.daily.current + "hrs";
+    time[i].innerHTML =
+      "Yesterday - " + data[i].timeframes.daily.previous + "hrs";
   }
 
+  //on link switch - change data based on link name
   for (let l = 0; l < links.length; l++) {
     links[l].addEventListener("click", (e) => {
       let active = document.querySelector(".active");
@@ -125,16 +129,19 @@
 
       for (let i = 0; i < data.length; i++) {
         if (links[l].innerHTML === "Daily") {
-          time[i].innerHTML = "Yesterday";
-          hours1[i].innerHTML = data[i].timeframes.daily.current;
+          time[i].innerHTML =
+            "Yesterday - " + data[i].timeframes.daily.previous + "hrs";
+          hours1[i].innerHTML = data[i].timeframes.daily.current + "hrs";
         }
         if (links[l].innerHTML === "Weekly") {
-          time[i].innerHTML = "Last Week";
-          hours1[i].innerHTML = data[i].timeframes.weekly.current;
+          time[i].innerHTML =
+            "Last Week - " + data[i].timeframes.weekly.previous + "hrs";
+          hours1[i].innerHTML = data[i].timeframes.weekly.current + "hrs";
         }
         if (links[l].innerHTML === "Monthly") {
-          time[i].innerHTML = "Last Month";
-          hours1[i].innerHTML = data[i].timeframes.monthly.current;
+          time[i].innerHTML =
+            "Last Month - " + data[i].timeframes.monthly.previous + "hrs";
+          hours1[i].innerHTML = data[i].timeframes.monthly.current + "hrs";
         }
       }
     });
