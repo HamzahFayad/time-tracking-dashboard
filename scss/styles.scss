@@ -16,7 +16,7 @@
     grid-area: lg;
     .user {
       position: relative;
-      height: 400px;
+      height: 445px;
       width: 250px;
       &__pt1 {
         background: hsl(246, 80%, 60%);
@@ -24,7 +24,7 @@
         border-bottom-right-radius: 0;
         border-top-left-radius: 14px;
         border-top-right-radius: 14px;
-        height: 300px;
+        height: 320px;
         padding: 24px 34px;
         display: flex;
         flex-flow: column wrap;
@@ -48,12 +48,15 @@
         border-top-right-radius: 0;
         border-bottom-left-radius: 14px;
         border-bottom-right-radius: 14px;
-        height: 125px;
+        height: 148px;
         padding: 8px;
         p {
           color: hsl(235, 45%, 61%);
-          padding: 8px 34px;
+          padding: 12px 34px;
           cursor: pointer;
+          &:hover {
+            color: hsl(234, 45%, 72%);
+          }
         }
         p.active {
           color: #fff;
@@ -69,22 +72,25 @@
   .card--sm {
     position: relative;
     width: 300px;
-    height: 200px;
+    height: 220px;
     border-radius: 14px;
-    background: hsl(235, 46%, 20%);
-    padding: 0px;
-    margin: 4px;
+    background: rgb(28, 31, 74);
     margin-top: 25px;
+    cursor: pointer;
+    &:hover {
+      background: rgb(38, 41, 90);
+    }
     &--col {
       width: 300px;
-      height: 45px;
+      height: 46px;
       border-radius: 14px;
       z-index: -99;
       overflow: hidden;
       img {
-        width: 70px;
+        width: 80px;
         float: right;
         margin-right: 10px;
+        margin-top: -5px;
       }
     }
     @each $color in $theme-colors {
@@ -95,23 +101,91 @@
     }
 
     &--content {
-      z-index: 9;
-      padding: 24px 34px;
+      padding: 10px 34px;
       * {
         margin: 4% 0;
       }
+      .firstline {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        img {
+          width: 20px;
+          height: 6px;
+          align-self: center;
+        }
+      }
       h2 {
         color: #fff;
-        font-weight: 400;
+        font-weight: 500;
       }
       h3 {
         color: #fff;
         font-weight: 300;
         font-size: 40px;
       }
+      .time {
+        color: hsl(236, 100%, 87%);
+      }
     }
   }
   p {
     color: #fff;
+  }
+}
+
+@media only screen and(max-width: 1240px) {
+  .grid {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(7, 1fr);
+    grid-template-areas:
+      "lg"
+      "sh1"
+      "sh2"
+      "sh3"
+      "sh4"
+      "sh5"
+      "sh6";
+    .card--lg {
+      .user {
+        position: relative;
+        width: 400px;
+        height: 200px;
+        //display: grid;
+        //place-items: center;
+        &__pt1 {
+          flex-flow: row nowrap;
+          justify-content: space-between;
+          height: 150px;
+          padding: 34px 44px;
+        }
+        &__pt2 {
+          height: 80px;
+          display: flex;
+          flex-flow: row nowrap;
+          justify-content: space-around;
+          p {
+            align-self: center;
+          }
+        }
+      }
+    }
+    .card--sm {
+      margin-top: 12%;
+      width: 400px;
+      &--col {
+        width: 400px;
+      }
+      &--content {
+        padding: 34px 24px;
+        * {
+          margin: 2% 0;
+        }
+        .time {
+          float: right;
+          margin-top: -11%;
+        }
+      }
+    }
   }
 }

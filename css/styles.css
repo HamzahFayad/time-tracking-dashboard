@@ -15,7 +15,7 @@
 
 html,
 body {
-  height: 100vh;
+  height: 100%;
   margin: 0 auto;
   overflow-x: hidden;
   font-family: "Rubik";
@@ -46,7 +46,7 @@ a {
 
 html,
 body {
-  height: 100vh;
+  height: 100%;
   margin: 0 auto;
   overflow-x: hidden;
   font-family: "Rubik";
@@ -75,7 +75,7 @@ a {
 }
 .grid .card--lg .user {
   position: relative;
-  height: 400px;
+  height: 445px;
   width: 250px;
 }
 .grid .card--lg .user__pt1 {
@@ -84,7 +84,7 @@ a {
   border-bottom-right-radius: 0;
   border-top-left-radius: 14px;
   border-top-right-radius: 14px;
-  height: 300px;
+  height: 320px;
   padding: 24px 34px;
   display: flex;
   flex-flow: column wrap;
@@ -108,13 +108,16 @@ a {
   border-top-right-radius: 0;
   border-bottom-left-radius: 14px;
   border-bottom-right-radius: 14px;
-  height: 125px;
+  height: 148px;
   padding: 8px;
 }
 .grid .card--lg .user__pt2 p {
   color: #6f76c8;
-  padding: 8px 34px;
+  padding: 12px 34px;
   cursor: pointer;
+}
+.grid .card--lg .user__pt2 p:hover {
+  color: #979ed8;
 }
 .grid .card--lg .user__pt2 p.active {
   color: #fff;
@@ -140,24 +143,27 @@ a {
 .grid .card--sm {
   position: relative;
   width: 300px;
-  height: 200px;
+  height: 220px;
   border-radius: 14px;
   background: #1c1f4a;
-  padding: 0px;
-  margin: 4px;
   margin-top: 25px;
+  cursor: pointer;
+}
+.grid .card--sm:hover {
+  background: #26295a;
 }
 .grid .card--sm--col {
   width: 300px;
-  height: 45px;
+  height: 46px;
   border-radius: 14px;
   z-index: -99;
   overflow: hidden;
 }
 .grid .card--sm--col img {
-  width: 70px;
+  width: 80px;
   float: right;
   margin-right: 10px;
+  margin-top: -5px;
 }
 .grid .card--sm .col--1 {
   background: #ff8c66;
@@ -178,23 +184,80 @@ a {
   background: #f1c65b;
 }
 .grid .card--sm--content {
-  z-index: 9;
-  padding: 24px 34px;
+  padding: 10px 34px;
 }
 .grid .card--sm--content * {
   margin: 4% 0;
 }
+.grid .card--sm--content .firstline {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+.grid .card--sm--content .firstline img {
+  width: 20px;
+  height: 6px;
+  align-self: center;
+}
 .grid .card--sm--content h2 {
   color: #fff;
-  font-weight: 400;
+  font-weight: 500;
 }
 .grid .card--sm--content h3 {
   color: #fff;
   font-weight: 300;
   font-size: 40px;
 }
+.grid .card--sm--content .time {
+  color: #bdc1ff;
+}
 .grid p {
   color: #fff;
+}
+
+@media only screen and (max-width: 1240px) {
+  .grid {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(7, 1fr);
+    grid-template-areas: "lg" "sh1" "sh2" "sh3" "sh4" "sh5" "sh6";
+  }
+  .grid .card--lg .user {
+    position: relative;
+    width: 400px;
+    height: 200px;
+  }
+  .grid .card--lg .user__pt1 {
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    height: 150px;
+    padding: 34px 44px;
+  }
+  .grid .card--lg .user__pt2 {
+    height: 80px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+  }
+  .grid .card--lg .user__pt2 p {
+    align-self: center;
+  }
+  .grid .card--sm {
+    margin-top: 12%;
+    width: 400px;
+  }
+  .grid .card--sm--col {
+    width: 400px;
+  }
+  .grid .card--sm--content {
+    padding: 34px 24px;
+  }
+  .grid .card--sm--content * {
+    margin: 2% 0;
+  }
+  .grid .card--sm--content .time {
+    float: right;
+    margin-top: -11%;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
