@@ -109,12 +109,10 @@
   let links = document.querySelectorAll(".link");
   let theme = document.querySelectorAll(".theme");
   let hours1 = document.querySelectorAll(".hours1");
-
   let time = document.querySelectorAll(".time");
 
   for (let i = 0; i < data.length; i++) {
     console.log(data[i].title);
-    console.log("..", theme[i]);
     theme[i].innerHTML = data[i].title;
     hours1[i].innerHTML = data[i].timeframes.daily.current;
   }
